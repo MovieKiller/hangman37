@@ -10,10 +10,7 @@ class Hangman:
             self.word = random.choice(word_list)
             self.num_letters = len(set(self.word))
             self.word_guessed = ['_' for element in range(0, len(self.word))]
-            # TODO 2: Initialize the attributes as indicated in the docstring
-            # TODO 2: Print two message upon initialization:
-            # 1. "The mistery word has {num_letters} characters"
-            # 2. {word_guessed}
+         
             pass
 
     def check_guess(self, guess):
