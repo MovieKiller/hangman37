@@ -16,3 +16,33 @@ class Hangman:
             # 2. {word_guessed}
             pass
 
+    def check_guess(self, guess):
+       
+        guess.lower()
+        if guess in self.word:
+            for index in range(0, len(self.word)):
+                if self.word[index] == guess:
+                    self.word_guessed[index] = guess
+            self.num_letters = self.num_letters - 1
+            print(f"Good guess! {guess} is in the word.")
+            
+        else:
+            self.num_lives = self.num_lives - 1
+            print(f"Sorry, {guess} is not in the word.")
+            print(f"You have {self.num_lives} lives left.")
+        print(self.word_guessed)
+    def ask_for_input(self):
+    
+        while True:
+            guess = input("Guess a single letter of your choice : _ ")
+            if len(guess) != 1 or guess.isalpha() == False:
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif guess in self.list_of_guesses:
+                print("You already tried that letter!")
+            else:
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)       
+
+    if __name__ == '__main__':
+        game = Hangman(Hangman.word_list)
+        game.ask_for_input()               
