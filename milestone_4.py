@@ -43,6 +43,6 @@ class Hangman:
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess)       
 
-    if __name__ == '__main__':
-        game = Hangman(Hangman.word_list)
-        game.ask_for_input()               
+if __name__ == '__main__':
+    game = Hangman(Hangman.word_list)
+    game.ask_for_input()           
